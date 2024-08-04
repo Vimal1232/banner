@@ -67,7 +67,7 @@ const Mainhead = () => {
     try {
       const response = await axios.get("/api/Fetching");
       if (response.status === 200) {
-        setBannerData(response.data.data);
+        setBannerData(response.data);
       }
     } catch (error) {
       console.error("Error fetching data:", error);
