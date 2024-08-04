@@ -35,7 +35,7 @@ const Mainhead = () => {
   const [Id, setId] = useState(0);
   const [Image, setimage] = useState("");
   const [clickedImage, setClickedImage] = useState(null);
-  const [BannerData, setBannerData] = useState();
+  const [BannerData, setBannerData] = useState(BannerDatafromfile);
 
   const UpdateData = async (e) => {
     e.preventDefault();
