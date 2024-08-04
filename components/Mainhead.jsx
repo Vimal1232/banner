@@ -2,7 +2,7 @@
 
 import React from "react";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BannerData from "@/Data/Banner.json";
 import Imagesdata from "@/Data/Image.json";
 import {
@@ -35,6 +35,7 @@ const Mainhead = () => {
   const [Id, setId] = useState(0);
   const [Image, setimage] = useState("");
   const [clickedImage, setClickedImage] = useState(null);
+  const [BannerData, setBannerData] = useState(BannerData);
 
   const UpdateData = async (e) => {
     e.preventDefault();
@@ -61,6 +62,21 @@ const Mainhead = () => {
       console.error;
     }
   };
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("/api/Fetching");
+      if (response.status === 200) {
+        setBannerData(response.data.data);
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div className="flex gap-10 mt-20">
