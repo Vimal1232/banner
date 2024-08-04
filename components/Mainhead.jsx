@@ -68,7 +68,7 @@ const Mainhead = () => {
     try {
       const response = await axios.get("/api/Update");
       if (response.status === 200) {
-        setBannerData(response.data.data);
+        setBannerData(response.data);
       }
     } catch (error) {
       console.error(error);
