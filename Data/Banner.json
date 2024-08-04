@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "image": "/photo1.jpg",
+    "title": "Boost Your Leads",
+    "description": " Harness Ai for Effective Campaigns",
+    "bgImage": "url(/Bg1.png)",
+    "button": "Learn More"
+  },
+  {
+    "id": 2,
+    "image": "/photo1.jpg",
+    "title": "Get High Quality Leads",
+    "description": "Harness Ai for Effective Campaigns",
+    "bgImage": "url(/Bg2.jpg)",
+    "button": "Learn More"
+  }
+]

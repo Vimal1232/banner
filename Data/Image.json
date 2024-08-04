@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "img": "/photo1.jpg"
+  },
+
+  {
+    "id": 2,
+    "img": "/changePh1.jpg"
+  },
+  {
+    "id": 3,
+    "img": "/changePh2.jpg"
+  },
+  {
+    "id": 4,
+    "img": "/changePh3.jpg"
+  },
+  {
+    "id": 5,
+    "img": "/changePh4.jpg"
+  }
+]
