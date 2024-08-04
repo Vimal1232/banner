@@ -57,6 +57,7 @@ const Mainhead = () => {
       );
       if (response.status === 200) {
         console.log(response.data);
+        fetchData();
       }
     } catch (error) {
       console.error;
@@ -65,12 +66,12 @@ const Mainhead = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("/api/Fetching");
+      const response = await axios.get("/api/Update");
       if (response.status === 200) {
-        setBannerData(response.data);
+        setBannerData(response.data.data);
       }
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error(error);
     }
   };
 
