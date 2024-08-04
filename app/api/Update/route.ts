@@ -17,10 +17,10 @@ export async function POST(req: Request) {
       fs.writeFileSync(tmpFilepath, JSON.stringify([]));
     }
 
-    const filepath = path.resolve(process.cwd(), "Data", "Banner.json");
+    // const filepath = path.resolve(process.cwd(), "Data", "Banner.json");
     const newData = await req.json();
 
-    const fileContent = fs.readFileSync(filepath, "utf-8");
+    const fileContent = fs.readFileSync(tmpFilepath, "utf-8");
     const jsonData = JSON.parse(fileContent);
 
     const index = jsonData.findIndex((item: any) => item.id === newData.id);
