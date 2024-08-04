@@ -7,7 +7,7 @@ import { json } from "stream/consumers";
 export async function POST(req: Request) {
   try {
     const tmpDir = "/tmp";
-    const tmpFilepath = path.join(tmpDir, "Banner.json");
+    const tmpFilepath = path.join(tmpDir, "Data", "Banner.json");
 
     if (!fs.existsSync(tmpDir)) {
       fs.mkdirSync(tmpDir);
