@@ -2,22 +2,21 @@
 import fs from "fs";
 import path from "path";
 import { NextResponse } from "next/server";
-import { json } from "stream/consumers";
 
 export async function POST(req: Request) {
   try {
     const tmpDir = "/tmp";
-    const tmpFilepath = path.join(tmpDir, "Data", "Banner.json");
+    const tmpFilepath = path.join(tmpDir, "Banner.json");
+    const filepath = path.resolve(process.cwd(), "Data", "Banner.json");
 
     if (!fs.existsSync(tmpDir)) {
       fs.mkdirSync(tmpDir);
     }
 
     if (!fs.existsSync(tmpFilepath)) {
-      fs.writeFileSync(tmpFilepath, JSON.stringify([]));
+      const realfilecontent = fs.readFileSync(filepath, "utf-8");
+      fs.writeFileSync(tmpFilepath, realfilecontent);
     }
-
-    // const filepath = path.resolve(process.cwd(), "Data", "Banner.json");
     const newData = await req.json();
 
     const fileContent = fs.readFileSync(tmpFilepath, "utf-8");
