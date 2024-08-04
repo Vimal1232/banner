@@ -30,7 +30,7 @@ export async function POST(req: Request) {
     } else {
       console.log("not found");
     }
-    fs.writeFileSync(filepath, JSON.stringify(jsonData, null, 2));
+    fs.writeFileSync(tmpFilepath, JSON.stringify(jsonData, null, 2));
 
     return NextResponse.json(
       { message: `Data updated successfully`, data: newData },
