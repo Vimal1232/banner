@@ -3,7 +3,7 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import BannerData from "@/Data/Banner.json";
+import BannerDatafromfile from "@/Data/Banner.json";
 import Imagesdata from "@/Data/Image.json";
 import {
   Dialog,
@@ -35,7 +35,7 @@ const Mainhead = () => {
   const [Id, setId] = useState(0);
   const [Image, setimage] = useState("");
   const [clickedImage, setClickedImage] = useState(null);
-  const [BannerData, setBannerData] = useState(BannerData);
+  const [BannerData, setBannerData] = useState(BannerDatafromfile);
 
   const UpdateData = async (e) => {
     e.preventDefault();
