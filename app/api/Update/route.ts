@@ -28,11 +28,7 @@ export async function POST(req: Request) {
     if (index !== -1) {
       jsonData[index] = { ...jsonData[index], ...newData };
     } else {
-      console.log("not found");
-      return NextResponse.json(
-        { message: "Item not found", data: newData },
-        { status: 404 }
-      );
+      console.log(newData);
     }
     fs.writeFileSync(tmpFilepath, JSON.stringify(jsonData, null, 2));
 
