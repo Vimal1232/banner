@@ -6,6 +6,17 @@ import { json } from "stream/consumers";
 
 export async function POST(req: Request) {
   try {
+    const tmpDir = "/tmp";
+    const tmpFilepath = path.join(tmpDir, "Banner.json");
+
+    if (!fs.existsSync(tmpDir)) {
+      fs.mkdirSync(tmpDir);
+    }
+
+    if (!fs.existsSync(tmpFilepath)) {
+      fs.writeFileSync(tmpFilepath, JSON.stringify([]));
+    }
+
     const filepath = path.resolve(process.cwd(), "Data", "Banner.json");
     const newData = await req.json();
 
