@@ -11,7 +11,7 @@ export async function GET(req: Request) {
     const fileContent = fs.readFileSync(tmpFilepath, "utf-8");
     const jsonData = JSON.parse(fileContent);
 
-    console.log(jsonData);
+    return NextResponse.json(jsonData, { status: 200 });
   } catch (error: any) {
     console.error("error reading the JSON File", error);
   }
